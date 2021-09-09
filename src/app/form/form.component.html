@@ -1,0 +1,35 @@
+<form action="" id="form1" name="f1">
+    <div class="mb-3">
+        <label for="nombre" class="form-label">Nombre: </label>
+        <input type="text" class="form-control" name="nombre" id="nombre" placeholder="Nombre" required>
+    </div>
+    <div class="mb-3">
+        <label for="edad" class="form-label">Edad: </label>
+        <input type="text" class="form-control" name="edad" id="edad" placeholder="Edad" required>
+    </div>
+    <div class="mb-3">
+        <label for="genero" class="form-label">Genero: </label>
+        <input type="text" class="form-control"name="genero" id="genero" placeholder="Genero" required>
+    </div>
+    <div class="mb-3">
+        <label for="pais" class="form-label" >Pais: </label>
+        <select name="pais" class="form-select" id="pais" onchange="cambiar_estado()">
+            <option value="0">--
+            <option value="1">México
+            <option value="2">USA
+            <option value="3">Canadá
+        </select>
+    </div>
+    <div class="mb-3">
+        <label for="estado" class="form-label">Estado: </label>
+        <select name="estado" class="form-select" id="estado">
+            <option value="0">--
+                <option value="1">México
+                <option value="2">USA
+                <option value="3">Canadá
+        </select>
+    </div>
+    <div class="mb-3">
+        <button id="button" class="btn btn-primary"  (click)="validatorEnable()">Aceptar</button>
+</div>
+</form>
