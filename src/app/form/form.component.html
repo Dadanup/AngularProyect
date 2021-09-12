@@ -1,30 +1,35 @@
 <form action="" id="form1" name="f1">
     <div class="mb-3">
         <label for="nombre" class="form-label">Nombre: </label>
-        <input type="text" name="nombre" id="nombre" [(ngModel)]="model.nombre" class="form-control" placeholder="Nombre" >
+        <input type="text" name="nombre" id="nombre" [(ngModel)]="insertName.nombre" class="form-control" placeholder="Nombre" >
     </div>
    
     <div class="mb-3">
         <label for="edad" class="form-label">Edad: </label>
-        <input type="text" class="form-control" name="edad" id="edad" [(ngModel)]="model.edad" placeholder="Edad" >
+        <input type="text" class="form-control" name="edad" id="edad" [(ngModel)]="insertName.edad" placeholder="Edad" >
     </div>
     <div class="mb-3">
         <label for="genero" class="form-label">Genero: </label>
-        <input type="text" class="form-control"name="genero" id="genero" [(ngModel)]="model.genero" placeholder="Genero" >
+        <input type="text" class="form-control"name="genero" id="genero" [(ngModel)]="insertName.genero" placeholder="Genero" >
     </div>
     <div class="mb-3">
         <label for="pais" class="form-label" >Pais: </label>
         <!-- (change)="onSelect($event.target.value)"  -->
-        <select name="pais" class="form-select" id="pais" [(ngModel)]="selectedCountry.value" >
+        <select name="pais" class="form-select" id="pais" [(ngModel)]="selectedCountry.value" (change)="onSelect($event)">
+            <option value="0">Seleccionar ...</option>
             <option *ngFor="let country of countries" value="{{country.value}}">{{country.name}}</option>
         </select>
+
     </div>
     <div class="mb-3">
         <label for="estado" class="form-label">Estado: </label>
         <select name="estado" class="form-select" id="estado">
-           
+            <option value="0">Seleccionar ...</option>
+            <option *ngFor="let city of cities" value="{{city.value}}">{{city.name}}</option>
         </select>
     </div>
+    {{selectedCountry.value}}
+
     <div class="mb-3">
         <button id="button" class="btn btn-primary" (click)="onClick()" >Aceptar</button>
 </div>

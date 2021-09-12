@@ -9,4 +9,5 @@ export class AppComponent {
   
   title = 'BIENVENIDO';
   sentence = 'Ingresa los siguientes datos';
+  
 }
