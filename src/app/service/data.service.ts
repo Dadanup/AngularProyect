@@ -9,9 +9,9 @@ export class DataService {
   {nombre:"", edad:"", genero:"",pais:"", ciudad:""}
  ]
   private countries: Country[]=[
-    {value:1, name:"Mexico"},
-    {value:2, name:"USA"},
-    {value:3, name:"CANADA"}
+    {value:1, name:"México"},
+    {value:2, name:"Estados Unidos"},
+    {value:3, name:"Canadá"}
   ];
   
   private cities:City[]=[
