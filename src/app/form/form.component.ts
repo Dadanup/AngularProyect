@@ -1,5 +1,6 @@
 import { elementEventFullName } from '@angular/compiler/src/view_compiler/view_compiler';
 import { Component, OnInit } from '@angular/core';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 import {Country, City,Model} from '../models/model.interface';
 import {DataService} from '../service/data.service';
 @Component({
@@ -10,7 +11,17 @@ import {DataService} from '../service/data.service';
   providers:[DataService]
 })
 export class FormComponent implements OnInit {
+//----------
 
+  //----------
+  form=new FormGroup({
+    'name' : new FormControl(null, Validators.required),
+    'age' : new FormControl(null, Validators.required),
+    'genre' : new FormControl(null, Validators.required),
+    'country' : new FormControl(null, Validators.required),
+    'city' : new FormControl(null, Validators.required)
+  });
+//----------
 
     //implementar en model.interface a model
   public insertName: Model={nombre:"", edad:"", genero:"",pais:"", ciudad:""};
@@ -27,7 +38,11 @@ export class FormComponent implements OnInit {
     this.countries=this.dataSvc.getCountries();
     //this.cities=this.dataSvc.getCities();
     // this.model=this.dataSvc.getModel();
+  //----
+
+
     
+  //---
  
   }
   onSelect(countries:any){
@@ -52,6 +67,9 @@ export class FormComponent implements OnInit {
     }
   }
 
+  onSubmit(){
+    console.warn(this.form.value);
+  }
   
 
 }

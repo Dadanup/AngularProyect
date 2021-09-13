@@ -1,21 +1,24 @@
-<form action="" id="form1" name="f1">
+<form [formGroup]="form"  (ngSubmit)="onSubmit()" id="form1" name="f1">
     <div class="mb-3">
         <label for="nombre" class="form-label">Nombre: </label>
-        <input type="text" name="nombre" id="nombre" [(ngModel)]="insertName.nombre" class="form-control" placeholder="Nombre" >
+        <input formControlName="name" type="text" name="nombre" id="nombre" [(ngModel)]="insertName.nombre" class="form-control" placeholder="Nombre" >
+        <small class="text-danger">El nombre es requerido</small>
     </div>
    
     <div class="mb-3">
         <label for="edad" class="form-label">Edad: </label>
-        <input type="text" class="form-control" name="edad" id="edad" [(ngModel)]="insertName.edad" placeholder="Edad" >
+        <input formControlName="age" type="text" class="form-control" name="edad" id="edad" [(ngModel)]="insertName.edad" placeholder="Edad" >
+        <small class="text-danger">La edad es requerida</small>
     </div>
     <div class="mb-3">
         <label for="genero" class="form-label">Genero: </label>
-        <input type="text" class="form-control"name="genero" id="genero" [(ngModel)]="insertName.genero" placeholder="Genero" >
+        <input formControlName="genre" type="text" class="form-control"name="genero" id="genero" [(ngModel)]="insertName.genero" placeholder="Genero" >
+        <small class="text-danger">El genero es requerido</small>
     </div>
     <div class="mb-3">
         <label for="pais" class="form-label" >Pais: </label>
         <!-- (change)="onSelect($event.target.value)"  -->
-        <select name="pais" class="form-select" id="pais" [(ngModel)]="selectedCountry.value" (change)="onSelect($event)">
+        <select formControlName="country" name="pais" class="form-select" id="pais" [(ngModel)]="selectedCountry.value" (change)="onSelect($event)">
             <option value="0">Seleccionar ...</option>
             <option *ngFor="let country of countries" value="{{country.value}}">{{country.name}}</option>
         </select>
@@ -23,15 +26,13 @@
     </div>
     <div class="mb-3">
         <label for="estado" class="form-label">Estado: </label>
-        <select name="estado" class="form-select" id="estado">
+        <select formControlName="city" name="estado" class="form-select" id="estado">
             <option value="0">Seleccionar ...</option>
             <option *ngFor="let city of cities" value="{{city.value}}">{{city.name}}</option>
         </select>
     </div>
-    {{selectedCountry.value}}
-
     <div class="mb-3">
-        <button id="button" class="btn btn-primary" (click)="onClick()" >Aceptar</button>
+        <button type="submit" [disabled]="form.invalid" id="button" class="btn btn-primary" (click)="onClick()" >Aceptar</button>
 </div>
 </form>
 
