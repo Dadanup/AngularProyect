@@ -20,15 +20,15 @@ export class DataService {
     {value:3,countryid:1,name:'Guadalajara'},
     {value:4,countryid:1,name:'Monterrey'},
     
-    {value:1,countryid:2,name:'Houston'},
-    {value:2,countryid:2,name:'Chicago'},
-    {value:3,countryid:2,name:'California'},
-    {value:4,countryid:2,name:'Denver'},
+    {value:5,countryid:2,name:'Houston'},
+    {value:6,countryid:2,name:'Chicago'},
+    {value:7,countryid:2,name:'California'},
+    {value:8,countryid:2,name:'Denver'},
     
-    {value:1,countryid:3,name:'Toronto'},
-    {value:2,countryid:3,name:'Montreal'},
-    {value:3,countryid:3,name:'Vancouver'},
-    {value:4,countryid:3,name:'Calgary'},
+    {value:9,countryid:3,name:'Toronto'},
+    {value:10,countryid:3,name:'Montreal'},
+    {value:11,countryid:3,name:'Vancouver'},
+    {value:12,countryid:3,name:'Calgary'},
   ]
   //get  de los datos privados
 
