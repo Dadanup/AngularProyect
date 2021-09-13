@@ -7,12 +7,17 @@ export interface Model{
 }
 
 export interface Country{
-    value:number;
+    value:string;
     name:string
 }
 
 export interface City{
-    value:number;
-    countryid:number;
+    value:string;
+    countryid:string;
     name: string;
+}
+
+export interface Genre{
+    value:string;
+    genre:string;
 }

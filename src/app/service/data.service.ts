@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import {Country, City, Model} from '../models/model.interface'
+import {Country, City, Model,Genre} from '../models/model.interface'
 
 @Injectable()
 export class DataService {
@@ -8,27 +8,33 @@ export class DataService {
  private model: Model[]=[
   {nombre:"", edad:"", genero:"",pais:"", ciudad:""}
  ]
+
+ private genrem: Genre[]=[
+   {value:'Masculino', genre:'Masculino'},
+   {value:'Femenino', genre:'Femenino'},
+   {value:'Otro', genre:'Otro'}
+ ]
   private countries: Country[]=[
-    {value:1, name:"México"},
-    {value:2, name:"Estados Unidos"},
-    {value:3, name:"Canadá"}
+    {value:"México", name:"México"},
+    {value:"Estados Unidos", name:"Estados Unidos"},
+    {value:"Canadá", name:"Canadá"}
   ];
   
   private cities:City[]=[
-    {value:1,countryid:1,name:'CDMX'},
-    {value:2,countryid:1,name:'Edo. de México'},
-    {value:3,countryid:1,name:'Guadalajara'},
-    {value:4,countryid:1,name:'Monterrey'},
+    {value:'CDMX',countryid:'México',name:'CDMX'},
+    {value:'Edo. de México',countryid:'México',name:'Edo. de México'},
+    {value:'Guadalajara',countryid:'México',name:'Guadalajara'},
+    {value:'Monterrey',countryid:'México',name:'Monterrey'},
     
-    {value:5,countryid:2,name:'Houston'},
-    {value:6,countryid:2,name:'Chicago'},
-    {value:7,countryid:2,name:'California'},
-    {value:8,countryid:2,name:'Denver'},
+    {value:'Houston',countryid:'Estados Unidos',name:'Houston'},
+    {value:'Chicago',countryid:'Estados Unidos',name:'Chicago'},
+    {value:'California',countryid:'Estados Unidos',name:'California'},
+    {value:'Denver',countryid:'Estados Unidos',name:'Denver'},
     
-    {value:9,countryid:3,name:'Toronto'},
-    {value:10,countryid:3,name:'Montreal'},
-    {value:11,countryid:3,name:'Vancouver'},
-    {value:12,countryid:3,name:'Calgary'},
+    {value:'Toronto',countryid:'Canadá',name:'Toronto'},
+    {value:'Montreal',countryid:'Canadá',name:'Montreal'},
+    {value:'Vancouver',countryid:'Canadá',name:'Vancouver'},
+    {value:'Calgary',countryid:'Canadá',name:'Calgary'},
   ]
   //get  de los datos privados
 
@@ -42,4 +48,9 @@ export class DataService {
   getCities(): City[]{
     return this.cities;
   }
+
+  getGenre(): City[]{
+    return this.cities;
+  }
 }
+
