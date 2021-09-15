@@ -1,0 +1,32 @@
+<p>STATUS: {{form.status}}</p>
+<form [formGroup]="form" (ngSubmit)="onSubmit()">
+    <input type="text" formControlName="name" placeholder="Nombre">
+    <input type="text" formControlName="age" placeholder="Edad">
+    <input type="text" formControlName="genre" placeholder="Genero">
+    <select (change)="onChange($event)" formControlName="country">
+        <option value="">Selecciona un Pais</option>
+        <option *ngFor="let country of countries"  value="{{country.value}}"> {{country.name}} </option>
+    </select>
+    <select formControlName="city">
+        <option value="">Selecciona una Ciudad/ Estado</option>
+        <option *ngFor="let city of cities"  value="{{city.value}}"> {{city.name}} </option>
+    </select>
+    <br>
+    <button type="submit" [disabled]="!form.valid">Aceptar</button>
+</form>
+
+<!-- <form>
+    <input type="text" placeholder="Nombre">
+    <input type="text" placeholder="Edad">
+    <input type="text" placeholder="Genero">
+    <select (change)="onChange($event)">
+        <option *ngFor="let country of countries" value="{{country.value}}"> {{country.name}} </option>
+    </select>
+    <select>
+        <option *ngFor="let city of cities" value="{{city.value}}"> {{city.name}} </option>
+    </select>
+    <br>
+    <button type="submit">Aceptar</button>
+</form> -->
+
+<!-- {{Country | JSON}} -->

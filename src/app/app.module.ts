@@ -7,13 +7,15 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 import { FormComponent } from './form/form.component';
 import { FormsModule,ReactiveFormsModule } from '@angular/forms';
+import { TestFormBuilderComponent } from './test-form-builder/test-form-builder.component';
 
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    FormComponent
+    FormComponent,
+    TestFormBuilderComponent
     
   ],
   imports: [
@@ -28,3 +30,4 @@ import { FormsModule,ReactiveFormsModule } from '@angular/forms';
   bootstrap: [AppComponent]
 })
 export class AppModule { }
+
